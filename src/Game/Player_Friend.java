@@ -1,7 +1,7 @@
 package Game;
 import java.util.Scanner;
 
-public class Play_Friend {
+public class Player_Friend {
 	public char FindWinner(char [][] Game_Board,char PlayerToken) { // Finds the Winner.
 		char player = 'D';
 		// For Player - O
@@ -24,7 +24,7 @@ public class Play_Friend {
 		
 		return player;
 	}
-	public boolean CheckWinner(char[][] Game_Board) {
+	public boolean CheckWin(char[][] Game_Board) {
 		// Decides whether game need to Continue or End.
 	
 		for(int i = 1;i < 6;i += 2) {
@@ -138,7 +138,7 @@ public class Play_Friend {
 		while(!gameOver) {
 			int index = 0;
 			Print_Board(Game_Board); // Print the Game Board
-			gameOver = CheckWinner(Game_Board); // Check : Game_contiue
+			gameOver = CheckWin(Game_Board); // Check : Game_contiue
 			if(gameOver != false) {
 				break;
 			}
@@ -157,7 +157,7 @@ public class Play_Friend {
 				break; // Moves out of the while Loop as all the shells are filled by token values.
 			}
 			Print_Board(Game_Board); // Print the Game Board
-			gameOver = CheckWinner(Game_Board);
+			gameOver = CheckWin(Game_Board);
 			if(gameOver != false) {
 				Print_Board(Game_Board); // Printing Board For last time.
 				break;
@@ -178,13 +178,13 @@ public class Play_Friend {
 				break; // Moves out of the while Loop as all the shells are filled by token values.
 			}
 			Print_Board(Game_Board);
-			gameOver = CheckWinner(Game_Board);
-			
+			gameOver = CheckWin(Game_Board);			
 			
 		}
-		if(FindWinner(Game_Board, 'X') == 'D') {
+		
+		if(FindWinner(Game_Board, Player_1) == 'D' && FindWinner(Game_Board, Player_2) == 'D') {
 			System.out.println("\n\n\t\t\t\t\t\tGame Over \n\t\t\t\t\t\tDraw Game.");
-		} else if (FindWinner(Game_Board, 'X') == 'X') {
+		} else if (FindWinner(Game_Board,'X') == 'X') {
 			System.out.print("\n\n\t\t\t\t\t\tGame Over \n\t\t\t\t\t\tThe WInner is : ");
 			System.out.println("Player - X Won!!!!");			
 		} else {

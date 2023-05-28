@@ -1,7 +1,7 @@
 package Game;
 import java.util.Scanner;
 
-public class Main {
+public class Main extends Play_Friend, Play_Computer, Play_AI {
 		
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -12,7 +12,7 @@ public class Main {
 		ch = scan.nextInt();
 		switch(ch) {
 		case 1: {
-			Play_Friend friend = new Play_Friend();
+			Player_Friend friend = new Player_Friend();
 			friend.Play();
 			break;
 		} 
