@@ -1,7 +1,7 @@
 package Game;
 import java.util.Scanner;
 
-public class Main extends Play_Friend, Play_Computer, Play_AI {
+public class Main {
 		
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

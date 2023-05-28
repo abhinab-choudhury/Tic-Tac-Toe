@@ -5,7 +5,7 @@ import java.util.Random;
 public class Player_Computer {
 	public char FindWinner(char [][] Game_Board,char PlayerToken) { // Finds the Winner.
 		char player = 'D';
-		// For Player - O
+		
 		for(int i = 1;i < 6;i += 2) { 
 			if((Game_Board[i][1] == PlayerToken) && (Game_Board[i][3] == PlayerToken) && (Game_Board[i][5] == PlayerToken)) {
 				player = PlayerToken;
@@ -185,13 +185,12 @@ public class Player_Computer {
 		
 		if(FindWinner(Game_Board, Player_1) == 'D' && FindWinner(Game_Board, Player_2) == 'D') {
 			System.out.println("\n\n\t\t\t\t\t\tGame Over \n\t\t\t\t\t\tDraw Game.");
-		} else if (FindWinner(Game_Board, 'X') == 'X') {
+		} else if (FindWinner(Game_Board,Player_1) == Player_1) {
 			System.out.print("\n\n\t\t\t\t\t\tGame Over \n");
-			if(Player_1 == 'X' && Player_2 == 'O') {
-				System.out.println("\t\t\t\t\tYou Won!!!!");
-			}else {
-				System.out.println("You Lost ):\n\t\t\t\t\t\tBetter Luck Next Time.");
-			}
+			System.out.println("\t\t\t\t\tYou Won!!!!");
+		}else {
+			System.out.print("\n\n\t\t\t\t\t\tGame Over \n");
+			System.out.println("\t\t\t\t\tYou Lost ):\n\t\t\t\t\t\tBetter Luck Next Time.");
 		}
 		scan.close();
 	}

@@ -140,6 +140,7 @@ public class Player_Friend {
 			Print_Board(Game_Board); // Print the Game Board
 			gameOver = CheckWin(Game_Board); // Check : Game_contiue
 			if(gameOver != false) {
+				Print_Board(Game_Board);
 				break;
 			}
 			
@@ -154,6 +155,7 @@ public class Player_Friend {
 			Game_Board = player_moves(index,Game_Board,Player_1); // Input into the Board.
 			cnt_valid_input++;
 			if(cnt_valid_input == 9) {
+				Print_Board(Game_Board);
 				break; // Moves out of the while Loop as all the shells are filled by token values.
 			}
 			Print_Board(Game_Board); // Print the Game Board
