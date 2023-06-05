@@ -1,6 +1,9 @@
 package Game;
 import java.util.Scanner;
-
+/*
+ * In this code we add classed as the per requirements using switch case.
+ * 
+ * */
 public class Main {
 		
 	public static void main(String[] args) {
@@ -11,7 +14,7 @@ public class Main {
 		System.out.print("\t\t\t\t\tEnter your Choise : ");
 		ch = scan.nextInt();
 		switch(ch) {
-		case 1: {
+		case 1: { 
 			Player_Friend friend = new Player_Friend();
 			friend.Play();
 			break;
